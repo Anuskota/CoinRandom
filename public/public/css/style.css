@@ -43,7 +43,7 @@ body{
     backface-visibility: hidden;
 }
 .tails{
-    transform:rotateX(180deg);
+    transform: rotateX(180deg);
 
 }
 
@@ -72,7 +72,7 @@ body{
     }
 
 } 
-.stads{
+.stats{
 
     display:flex;
     color: #101020;
@@ -83,7 +83,7 @@ body{
     box-shadow: 0 0 20px rgba(0,139,253,0.25);
 }
 
-.stads p:nth-last-child(1){
+.stats p:nth-last-child(1){
     margin-left: 50%;
 }
 .buttons{
@@ -91,7 +91,7 @@ body{
     justify-content: space-between;
 } 
 
-button {
+button{
     width: 150px;
     padding: 15px 0;
     border: none;
@@ -100,7 +100,7 @@ button {
     cursor: pointer;
 
 }
-#start-button{
+#flip-button{
     background-color: #053469;
     color: white;
 }

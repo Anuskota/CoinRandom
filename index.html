@@ -18,25 +18,112 @@
             <div class="tails">
                 <img src="./public/public/css/img/tails.png" alt="tails coin">
             </div>
-
-            <!--Construimos el display donde se veran los contadores-->
-            </div>
-            <div class="stads">
-
+        </div>
+       
+            <!--Construimos el display donde se veran los contadores-->           
+        <div class="stats">
                 <p id="heads-count">Heads: 0</p>
                 <p id="tails-count">Tails: 0</p>
-            </div>
+        </div>
 
             <!--Creamos dos botones, unos para iniciar el proceso y otro para resetear el resultado-->
 
             <div class="buttons">
-
-                <button id="start-button">START</button>
+                <button id="flip-button">START</button>
                 <button id="reset-button">RESET</button>
             </div>
-            
-    </div>
+    </div> 
+    
+    
+    <script type="text/javascript">
+    
 
-    <script src="./public/public/js/index.js"></script>
+
+        /*Establecemos funciones con Id y Clases*/
+
+
+        let coin = document.querySelector(".coin");
+        let flipBtn = document.querySelector("#flip-button");
+        let resetBtn = document.querySelector("#reset-button");
+
+
+// /*Inicializamos Heads y Tails a 0*/
+        let heads = 0;
+        let tails = 0;
+
+        flipBtn.addEventListener("click", () => {
+            let i = Math.floor(Math.random() * 2);
+
+            coin.style.animation = "none";
+            console.log(flipBtn);
+            if (i) {
+
+                setTimeout(function(){
+                coin.style.animation = "spin-heads 3s forwords ";   
+                }, 100);
+                heads++;
+            }else {
+                setTimeout(function(){
+                coin.style.animation = "spin-tails 3s forwords ";   
+                }, 100);
+                tails++;
+
+            }
+
+            setTimeout(updateStats, 3000);
+            // disableButton();
+
+        })
+        function updateStats(){
+            document.querySelector("#heads-count").textContent = `Heads : ${heads}`;
+            document.querySelector("#tails-count").textContent = `Tails : ${tails}`;
+        }
+       
+
+
+
+// startBtn.addEventListener("click", () => {
+    
+//     /*Almaceno los valores en i*/
+//     /*Math.Random genera un numero aleatorio*/
+//     let i = Math.floor(Math.random() * 2);
+
+//     coin.style.animation = "none";    
+
+//     if (i) {
+//         setTimeout(function() {
+//             coin.style.animation = "spin-heads  3s forwords";
+//         }, 100);
+//         heads++;
+//     } else {
+
+//          setTimeout(function() {
+//             coin.style.animation = "spin-tails  3s forwords";
+//         }, 100);
+//         tails++;
+
+//     }
+//    setTimeout(upDateStates, 3000);
+//    disableButton();
+
+// })
+
+// //Activamos el contador
+
+//     function upDateStates(){
+
+//         document.querySelector("#heads-count").textContent = 'Heads: ${heads}';
+//         document.querySelector("#heads-count").textContent = 'Tails: ${tails}';
+//     }
+
+//     function disableButton(){
+//         startBtn.disabled = true;
+//         setTimeout(function(){
+//             startBtn.disable =false;
+//         }, 3000);
+//     } 
+
+
+</script>
 </body>
-</html>
+</html> 
